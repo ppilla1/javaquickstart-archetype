@@ -105,4 +105,4 @@
 
 ## To used archetype give below catalog location
 
-https://github.com/<what every value ${github.username}>/<what every value ${github.reponame}>/tree/master/<archetype groupId>/<archetype artifactId>
+https://github.com/<what every value ${github.username}>/<what every value ${github.reponame}>/tree/master/<archetype ${groupId}>/<archetype ${artifactId}>
