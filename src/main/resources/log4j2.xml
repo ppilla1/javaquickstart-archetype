@@ -1,0 +1,24 @@
+<Configuration status="INFO">
+    <Properties>
+        <Property name="LOG_DIR">E:/logs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C::%M(line:%L) - %msg%n" />
+        </Console>
+        <RollingFile name="RotatingLogFile" fileName="${LOG_DIR}/all.log" filePattern="${LOG_DIR}/all-%d{yyyy-MM-dd}.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C::%M(line:%L) - %msg%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="RotatingLogFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
